@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sony WH-1000XM5 - Sales Page</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sony WH-1000XM5</h1>
+        <p>The Ultimate Noise-Cancelling Headphones</p>
+    </header>
+    <main>
+        <!-- Video Section -->
+        <section id="promovid">
+            <!-- <h2>Watch the Promo Video</h2> -->
+            <div class="video-container">
+        <!-- Use the video tag instead of iframe for an mp4 video -->
+                <video controls autoplay muted loop>
+                    <source src="video/Sony Noise Cancelling Headphones WH-1000XM5 Official Product Video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section id="photogallery">
+            <h2>Product Gallery</h2>
+            <div class="gallery">
+                <a href="#" class="image-link">
+                    <img src="images\newfrontview.avif" alt="Sony WH-1000XM5 Front View" data-full="images\newfrontview.avif">
+                </a>
+                <a href="#" class="image-link">
+                    <img src="images\sideview.avif" alt="Sony WH-1000XM5 Side View" data-full="images\sideview.avif">
+                </a>
+                <a href="#" class="image-link">
+                    <img src="images\backview.avif" alt="Sony WH-1000XM5 Back View" data-full="images\backview.avif">
+                </a>
+                <a href="#" class="image-link">
+                    <img src="images\lastview.avif" alt="Sony WH-1000XM5 Folded View" data-full="images\lastview.avif">
+                </a>
+                <a href="#" class="image-link">
+                    <img src="images\bagview.avif" alt="Sony WH-1000XM5 Bag View" data-full="images\bagview.avif">
+                </a>
+            </div>
+        </section>
+
+        <!-- Modal for image display -->
+        <div id="image-modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-image">
+            <div id="modal-caption"></div>
+        </div>
+        <section id="features">
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Advanced Noise Cancellation:</strong> Dual processors with 8 microphones deliver exceptional noise isolation.</li>
+                <li><strong>Crystal-Clear Audio:</strong> 30mm drivers and smart features like 360 Reality Audio provide an immersive listening experience.</li>
+                <li><strong>Comfortable Design:</strong> Lightweight, ergonomic build with premium materials for extended wear.</li>
+            </ul>
+        </section>
+        <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+                <li>Experience uninterrupted focus with industry-leading noise cancellation.</li>
+                <li>Enjoy all-day comfort with a 30-hour battery life and lightweight design.</li>
+                <li>Benefit from intuitive features like adaptive sound control and Speak-to-Chat for convenience.</li>
+            </ul>
+        </section>
+        <section id="action">
+            <h2>Get Yours Today!</h2>
+            <p>Discover the Sony WH-1000XM5 and elevate your audio experience to the next level.</p>
+            <a href="https://www.sony.com.my/electronics/headband-headphones/wh-1000xm5?cid=Cat-PE_MY_Model:sem:goog:WH-1000XM5&gad_source=1&gclid=CjwKCAiAmMC6BhA6EiwAdN5iLRl0qty7HAy9LG5LABoUlZG45s9Skaac0q1NGMsUsSVdGW00iqwy-hoC1JoQAvD_BwE&gclsrc=aw.ds" target="_blank" class="btn">Visit Official Page</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sony Corporation. All Rights Reserved.</p>
+    </footer>
+    <script>
+        // Get modal elements
+        var modal = document.getElementById("image-modal");
+        var modalImg = document.getElementById("modal-image");
+        var captionText = document.getElementById("modal-caption");
+        var closeBtn = document.getElementsByClassName("close")[0];
+
+        // Get all image links
+        var images = document.querySelectorAll(".image-link");
+
+        // Add event listener to each image
+        images.forEach(function(image) {
+            image.onclick = function(event) {
+                event.preventDefault(); // Prevent the default link behavior
+                var fullImage = image.querySelector("img").getAttribute("data-full"); // Get the large image source
+                modal.style.display = "block"; // Show the modal
+                modalImg.src = fullImage; // Set the modal image source
+                captionText.innerHTML = image.querySelector("img").alt; // Set the caption
+            };
+        });
+
+        // Close the modal when the close button is clicked
+        closeBtn.onclick = function() {
+            modal.style.display = "none"; // Hide the modal
+        };
+    </script>
+</body>
+</html>
